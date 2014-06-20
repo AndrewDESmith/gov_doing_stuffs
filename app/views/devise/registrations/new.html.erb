@@ -1,0 +1,29 @@
+<div class="row user-registration">
+  <h3>Sign up</h3>
+  <hr />
+  <div class="row">
+    <div class="col-6">
+      Already a user?, <%= link_to "Sign in", new_user_session_path %> 
+    </div>
+    <div class="col-6 nopadding text-right">
+      <%= link_to user_omniauth_authorize_path(:facebook), class: "button primary" do %>
+        <i class="fa fa-facebook"></i> Sign in with Facebook
+      <% end %>
+    </div>
+  </div>
+  <br />
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div><%= f.label :email %>
+    <%= f.email_field :email, :autofocus => true %></div>
+
+    <div><%= f.label :password %>
+    <%= f.password_field :password %></div>
+
+    <div><%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %></div>
+
+    <div><%= f.submit "Sign up", class: 'button large' %></div>
+  <% end %>
+</div>

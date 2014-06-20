@@ -1,0 +1,7 @@
+development:
+  FACEBOOK_APP_ID: ""
+  FACEBOOK_APP_SECRET: ""
+production:
+  FACEBOOK_APP_ID: ""
+  FACEBOOK_APP_SECRET: ""
+
