@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621000608) do
+ActiveRecord::Schema.define(version: 20140621015804) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["user_id"], name: "index_categories_on_user_id"
 
   create_table "locations", force: true do |t|
     t.string   "address"
@@ -20,6 +29,38 @@ ActiveRecord::Schema.define(version: 20140621000608) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "twitter_message"
+    t.text     "facebook_message"
+    t.text     "email_message"
+    t.boolean  "allow_photo_in_request"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["category_id"], name: "index_projects_on_category_id"
+
+  create_table "requests", force: true do |t|
+    t.string   "citizen_name"
+    t.string   "email"
+    t.string   "twitter_handler"
+    t.string   "facebook_handler"
+    t.string   "phone"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.text     "comment"
+    t.string   "address"
+    t.binary   "photo"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "requests", ["project_id"], name: "index_requests_on_project_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
