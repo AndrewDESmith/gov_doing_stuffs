@@ -3,3 +3,9 @@
   <p>Use this template as a start point to get up and running.</p>
   <p>It is just barebones HTML.</p>
 </div>
+<%= form_tag locations_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>

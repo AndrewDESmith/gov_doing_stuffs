@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require furatto
 //= require_tree .
+
