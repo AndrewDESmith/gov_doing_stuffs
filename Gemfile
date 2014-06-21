@@ -4,6 +4,8 @@ ruby '2.1.0'
 
 gem 'geocoder'
 
+gem 'exiftool_vendored'
+
 gem 'underscore-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
