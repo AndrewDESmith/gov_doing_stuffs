@@ -9,7 +9,7 @@
     <li>
       <p>Project Name: <%= project.name %></p>
       <p>Project Description: <%= project.description %></p>
-      <p></p>
+      <p><%= link_to "Create New Request", "/projects/#{project.id}/requests/new" %></p>
     </li>
   <% end %>
 </ul>

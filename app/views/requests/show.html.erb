@@ -1,0 +1,11 @@
+Citizen Name: <%= @request.citizen_name %>
+Email: <%= @request.email %>
+Comment: <%= @request.facebook_handler %>
+Facebook: <%= @request.twitter_handler %>
+Phone: <%= @request.phone %>
+Project: <%= @request.project.name %>
+<hr>
+<p>Latest Projects</p>
+<% @projects_latest.each do |project| %>
+<p>Project: <%= project.name %></p>
+<% end %>

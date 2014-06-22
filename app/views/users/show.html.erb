@@ -13,7 +13,6 @@
           <% pro.requests.all.each do |req| %>
            <li>
             <div>Name: <%= req.citizen_name %></div>
-            <div>Address: <%= req.location.address %></div>
             <div>Hours Passed: <%= format_time(Time.now - req.created_at)%></div>
           </li>
           <% end %>

@@ -7,6 +7,7 @@
     <p>Facebook Message: <%= project.facebook_message %></p>
     <p>Email Message: <%= project.email_message %></p>
     <p>Allow Photo? <%= project.allow_photo_in_request%></p>
+    <p><%=link_to "Project Content", "/projects/#{project.id}" %></p>
   </li>
 <% end %>
 </ul>
