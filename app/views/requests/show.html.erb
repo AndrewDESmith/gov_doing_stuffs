@@ -4,6 +4,7 @@ Comment: <%= @request.facebook_handler %>
 Facebook: <%= @request.twitter_handler %>
 Phone: <%= @request.phone %>
 Project: <%= @request.project.name %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@request.location.latitude}%2C#{@request.location.longitude}" %>
 <hr>
 <p>Latest Projects</p>
 <% @projects_latest.each do |project| %>
