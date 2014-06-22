@@ -1,0 +1,15 @@
+<%= form_for @project do |f| %>
+  <p><%= f.label :name %><%= f.text_field :name %></p>
+
+  <p><%= f.label :description %><%= f.text_area :description %></p>
+
+  <p><%= f.label :twitter_message %><%= f.text_field :twitter_message %></p>
+
+  <p><%= f.label :facebook_message %><%= f.text_field :facebook_message %></p>
+
+  <p><%= f.label :email_message %><%= f.text_field :email_message %></p>
+
+  <p><%= f.label :category_id %><%= f.select :category_id, @categories %></p>
+  <p><%= f.label :allow_photo_in_request%><%= f.check_box :allow_photo_in_request %></p>
+  <%= f.submit %>
+<% end %>

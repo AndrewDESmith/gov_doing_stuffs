@@ -1,0 +1,12 @@
+<ul>
+<% @projects.each do |project| %>
+  <li>
+    <p>Project Name: <%= project.name %></p>
+    <p>Project Description: <%= project.description %></p>
+    <p>Twitter Message: <%= project.twitter_message %></p>
+    <p>Facebook Message: <%= project.facebook_message %></p>
+    <p>Email Message: <%= project.email_message %></p>
+    <p>Allow Photo? <%= project.allow_photo_in_request%></p>
+  </li>
+<% end %>
+</ul>

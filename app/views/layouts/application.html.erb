@@ -33,6 +33,9 @@
     <ul class="pull-right">
     <%- if user_signed_in? %>
       <li><%= link_to "Sign out", destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: :delete %></li>
+      <% if action_name = "show" and controller_name ="users" %>
+      <li><%= link_to "Create New Project", controller: "projects", action: "new" %></li>
+      <% end %>
     <% else %>
       <li class="divider"></li>
       <li><%= link_to "Sign in", new_user_session_path %></li>

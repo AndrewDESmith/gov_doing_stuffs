@@ -1,0 +1,28 @@
+<p>Create New Request</p>
+<%= form_for([@project, @project.requests.build]) do |f| %>
+    <p>
+      <%= f.label :citizen_name %><br>
+      <%= f.text_field :citizen_name %>
+    </p>
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :twitter_handler %><br>
+      <%= f.text_field :twitter_handler %>
+    </p>
+    <p>
+      <%= f.label :facebook_handler %><br>
+      <%= f.text_field :facebook_handler %>
+    </p>
+    <p>
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone %>
+    </p>
+    <p>
+      <%= f.label :comment %><br>
+      <%= f.text_field :comment %>
+    </p>
+    <p><%= f.submit %></p>
+<% end %>

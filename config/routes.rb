@@ -4,6 +4,21 @@ FurattoExample::Application.routes.draw do
   root to: 'pages#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  resources :projects do
+    resources :requests, only: [:index, :new, :create]
+  end
+  resources :requests, only: [:show, :edit, :update, :destroy]
+
+  # resources :users do
+  #   resources :projects, only: [:index, :new, :create]
+  # end
+ resources :users do
+  resources :projects, only: [:index, :new, :create]
+ end
+ resources :projects, only: [:show, :edit, :update, :destroy]
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

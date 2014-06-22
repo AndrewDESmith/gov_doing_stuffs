@@ -3,6 +3,17 @@
   <p>Use this template as a start point to get up and running.</p>
   <p>It is just barebones HTML.</p>
 </div>
+<div>
+  <ul>
+  <% @projects.each do |project| %>
+    <li>
+      <p>Project Name: <%= project.name %></p>
+      <p>Project Description: <%= project.description %></p>
+      <p></p>
+    </li>
+  <% end %>
+</ul>
+</div>
 <%= form_tag locations_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>

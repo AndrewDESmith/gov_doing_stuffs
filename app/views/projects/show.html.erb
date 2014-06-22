@@ -1,0 +1,22 @@
+<p>Project Name: <%= @project.name %></p>
+<p>Project description: <%= @project.description %></p>
+<p>Twitter: <%= @project.twitter_message %></p>
+<p>Facebook: <%= @project.facebook_message %></p>
+<p>Email: <%= @project.email_message %></p>
+<p>Category: <%= @project.category.name %></p>
+<hr>
+<p>
+  <ul>
+<% @requests.each do |request|%>
+  <li>
+    <p>Citizen Name: <%= request.citizen_name%></p>
+    <p>Email: <%= request.email %></p>
+    <p>Twitter: <%= request.twitter_handler %></p>
+    <p>Facebook: <%= request.facebook_handler %></p>
+    <p>Phone: <%= request.phone %></p>
+    <p>Comment: <%= request.comment %></p>
+    <p><%= link_to "Request_Content", request_path(request)%></p>
+  </li>
+<% end %>
+ </ul>
+</p>
